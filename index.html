@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for SEO and mobile responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daryl Smith - UI/UX Designer Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Daryl Smith, a UI/UX Designer showcasing user-centered design and creativity.">
+    <meta name="keywords" content="Daryl Smith, UI/UX Designer, Portfolio">
+
+    <!-- Tailwind CSS for styling -->
+    <link rel="stylesheet" href="dist/css/tailwind.css">
+
+
+    <!-- Remix Icon CDN for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="bg-[#171B1A] text-white">
+
+    <!-- Header Section Starts Here -->
+    <header class="sticky top-0 z-50 backdrop-blur-3xl bg-black ">
+        <!-- Navbar start -->
+        <nav class="p-4 w-11/12 mx-auto flex justify-between items-center md:px-10" aria-label="Primary Navigation">
+            <!-- Left Side: Name and Title -->
+            <div class="flex items-center space-x-3">
+                <div>
+                    <h1 class="text-2xl font-bold">
+                        <span class="text-white">Daryl</span>
+                        <span class="text-transparent bg-clip-text bg-[#F89222]">
+                            Smith
+                        </span>
+                    </h1>
+                    <p class="text-sm text-gray-400">UI/UX Designer</p>
+                </div>
+            </div>
+
+            <!-- Center: Home Link for Desktop -->
+            <div class="hidden md:flex items-center space-x-6 -ml-72 ">
+                <a href="#home"
+                    class="flex items-center space-x-2 text-white transition-colors duration-200 hover:text-orange-500 focus:text-orange-500 border-l-2 py-2 pl-40 border-white/15 ">
+                    <span class="bg-gradient text-black p-1 rounded-md px-2 ">
+                        <i class="ri-home-8-line text-white text-xl" aria-hidden="true"></i>
+                        <span class="sr-only">Home</span>
+                    </span>
+                    <span class="font-bold">Home</span>
+                </a>
+            </div>
+
+            <!-- Right Side: Talk To Me Button for Desktop -->
+            <div class="hidden md:flex flex-col items-center">
+                <button aria-label="Talk To Me"
+                    class="border-2 border-[#F89222] text-[#F89222] px-4 py-1 rounded-full transition-all duration-300 hover:text-white hover:bg-gradient focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    Talk To Me
+                </button>
+            </div>
+
+            <!-- Mobile Hamburger Menu Icon -->
+            <button id="menuToggle" aria-label="Open menu"
+                class="block md:hidden text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Fixed Position) -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 absolute w-full left-0 top-full">
+            <a href="#home" class="block px-4 py-2 text-orange-400 hover:bg-gray-700 focus:bg-gray-700">Home</a>
+            <button
+                class="block w-full text-left px-4 py-2 border-t border-gray-700 text-orange-500 hover:bg-gray-700 focus:bg-gray-700">Talk
+                To Me</button>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuToggle = document.getElementById('menuToggle');
+                const mobileMenu = document.getElementById('mobileMenu');
+
+                // Toggle mobile menu visibility with slide animation
+                menuToggle.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            });
+        </script>
+    </header>
+    <!-- Navbar End -->
+
+
+
+
+
+
+    <!-- Main Section Starts Here -->
+    <main class=" gap-6 md:grid grid-cols-12
+  w-11/12 mx-auto   ">
+
+        <!-- left side  -->
+        <div class="col-span-6 lg:col-span-4">
+            <div class="flex sticky top-14">
+                <!-- Icons Section -->
+                <div class="flex flex-col text-3xl p-5 mt-12 gap-6 bg-[#171B1A]" id="iconContainer">
+                    <a href="#home"> <i class="ri-home-8-line text-white icon" aria-label="Home"></i></a>
+                    <a href="#user"><i class="ri-user-line text-white icon" aria-label="User"></i></a>
+                    <a href="#shop"> <i class="ri-shopping-bag-4-line text-white icon"
+                            aria-label="Shopping Bag"></i></a>
+                    <a href="#blog"> <i class="ri-edit-box-fill text-white icon" aria-label="Edit"></i></a>
+                    <a href="#contact"> <i class="ri-phone-line text-white icon" aria-label="Phone"></i></a>
+                </div>
+
+                <!-- Styles for Icons -->
+                <style>
+                    /* Hover effect for icons */
+                    .icon:hover {
+                        color: transparent;
+                        background-clip: text;
+                        background-image: linear-gradient(to right, #F5BD4D, #F89222);
+                    }
+
+                    /* Active (clicked) state for icons */
+                    .icon.active {
+                        color: transparent;
+                        background-clip: text;
+                        background-image: linear-gradient(to right, #F5BD4D, #F89222);
+                    }
+                </style>
+
+                <!-- Script for Icon Click Event -->
+                <script>
+                    // Get all icons
+                    const icons = document.querySelectorAll('#iconContainer .icon');
+
+                    // Function to remove active class from all icons
+                    function removeActiveClass() {
+                        icons.forEach(icon => {
+                            icon.classList.remove('active');
+                        });
+                    }
+
+                    // Set the first icon (Home) as active by default
+                    icons[0].classList.add('active');
+
+                    // Add click event to each icon
+                    icons.forEach(icon => {
+                        icon.addEventListener('click', function () {
+                            // Remove active class from all icons
+                            removeActiveClass();
+
+                            // Add active class to the clicked icon
+                            icon.classList.add('active');
+                        });
+                    });
+                </script>
+
+                <!-- Image Section -->
+                <div>
+                    <div>
+                        <img class="bg-black w-full h-auto" src="./assets/Mask group.png" alt="Branding Image">
+                    </div>
+
+                    <!-- Social Icons for Small Screens -->
+                    <div class="text-center space-x-3 xl:hidden sm:space-x-4 text-xl p-3 bg-[#000000] mx-auto">
+                        <i class="ri-facebook-circle-fill" aria-label="Facebook"></i>
+                        <i class="ri-linkedin-fill" aria-label="LinkedIn"></i>
+                        <i class="ri-pinterest-line" aria-label="Pinterest"></i>
+                        <i class="ri-instagram-line" aria-label="Instagram"></i>
+                        <i class="ri-twitter-x-line" aria-label="Twitter"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Icons for Larger Screens -->
+            <div
+                class="text-center space-x-3 hidden xl:block sm:space-x-4 text-xl p-3 bg-[#000000] max-w-[370px] ml-[70px] mx-auto">
+                <i class="ri-facebook-circle-fill cursor-pointer hover:bg-[#F89222] hover:text-white p-2 rounded-full transition duration-300"
+                    aria-label="Facebook"></i>
+                <i class="ri-linkedin-fill cursor-pointer hover:bg-[#F89222] hover:text-white p-2 rounded-full transition duration-300"
+                    aria-label="LinkedIn"></i>
+                <i class="ri-pinterest-line cursor-pointer hover:bg-[#F89222] hover:text-white p-2 rounded-full transition duration-300"
+                    aria-label="Pinterest"></i>
+                <i class="ri-instagram-line cursor-pointer hover:bg-[#F89222] hover:text-white p-2 rounded-full transition duration-300"
+                    aria-label="Instagram"></i>
+                <i class="ri-twitter-x-line cursor-pointer hover:bg-[#F89222] hover:text-white p-2 rounded-full transition duration-300"
+                    aria-label="Twitter"></i>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- middle  -->
+        <section id="home" class="col-span-6 lg:col-span-6 ">
+            <div class="space-y-8">
+                <h1
+                    class=" mt-10 font-bold text-[16px] text-transparent bg-clip-text bg-gradient">
+                    INTRODUCTION
+                </h1>
+
+
+                <h2 class="font-bold text-3xl sm:text-5xl  ">I'm a Creative Developer &
+                    UI/UX Design Expert</h2>
+                <p class="font-bold text-[16px] ">24 years / Robert Smith / UK London</p>
+                <p class="font-medium text-white/70 text-[16px] ">Prolific, full stack web developer with a passion for
+                    metrics and beating former
+                    "best-yets. Prototyped 25 new product features per year for Flexor, Inc.
+                    Decreased rework by 22% and costs by 15%. Consistently receive high
+                    user experience scores for all web development projects, including a
+                    55% increase for Flexor, Inc. Passionate about building world class web
+                    applications. One of my sites received a 2020 Webby for Best
+                    Navigation and Structure.</p>
+                <div>
+                    <button
+                        class=" px-6 py-3 rounded-full text-[#F89222] hover:text-white border-[#F89222] border ease-int duration-300 font-medium hover:bg-gradient ">Downdolad
+                        CV <i class="ri-download-2-line "></i> </button>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- Resume Section Start Here -->
+            <div class="mt-24">
+                <h2 class="text-5xl font-bold">Resume</h2>
+
+                <!-- Education Section -->
+                <section aria-labelledby="education-heading">
+                    <h2 id="education-heading" class="text-3xl font-medium mt-10 mb-6">
+                        <i class="ri-graduation-cap-fill text-[#F89222]" aria-hidden="true"></i> Education
+                    </h2>
+
+                    <!-- Timeline Wrapper -->
+                    <div class="relative">
+                        <!-- Double-Layered Timeline Border -->
+                        <svg class="absolute top-0 h-full w-16 text-gray-500" viewBox="20 0 15 400" role="presentation">
+                            <line x1="12" y1="20" x2="12" y2="380" stroke="currentColor" stroke-width="1.5" />
+                            <line x1="20" y1="20" x2="20" y2="380" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M16 30 L22 40 L16 50 L10 40 Z" fill="none" stroke="currentColor"
+                                stroke-width="1.5" />
+                            <path d="M16 230 L22 240 L16 250 L10 240 Z" fill="none" stroke="currentColor"
+                                stroke-width="1.5" />
+                            <path d="M 12,20 Q 12,10 16,10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M 20,20 Q 20,10 16,10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M 12,380 Q 12,390 16,390" fill="none" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M 20,380 Q 20,390 16,390" fill="none" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+
+                        <!-- Education Content -->
+                        <div class="pl-10">
+                            <!-- Entry 1 -->
+                            <article aria-labelledby="education-entry-1">
+                                <h3 id="education-entry-1" class="mb-3 pt-8">2016-2020</h3>
+                                <div class="rounded-sm p-5 bg-black">
+                                    <h2
+                                        class="font-bold text-2xl text-transparent bg-clip-text bg-gradient">
+                                        Harvard University</h2>
+                                    <p class="text-gray-400 font-normal mb-4">B.A. and M.S., Computer Science</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut commodi earum
+                                        eligendi ipsum, laborum maiores mollitia, optio quam quis rerum totam voluptas.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <!-- Entry 2 -->
+                            <article aria-labelledby="education-entry-2">
+                                <h3 id="education-entry-2" class="mt-10 mb-3">2014-2016</h3>
+                                <div class="rounded-sm p-5 bg-black">
+                                    <h2
+                                        class="font-bold text-2xl text-transparent bg-clip-text bg-gradient">
+                                        Helwan University</h2>
+                                    <p class="text-gray-400 font-normal mb-4">Bachelor's Degree</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut commodi earum
+                                        eligendi ipsum, laborum maiores mollitia, optio quam quis rerum totam voluptas.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Resume Section End Here -->
+
+
+
+            <!-- Work History Section Start Here -->
+            <div class="mt-24">
+
+                <!-- Work History Header -->
+                <section aria-labelledby="work-history-heading">
+                    <h2 id="work-history-heading" class="text-3xl font-medium mt-10 mb-6">
+                        <i class="ri-folder-history-fill text-[#F89222]" aria-hidden="true"></i> Work History
+                    </h2>
+
+                    <!-- Timeline Wrapper -->
+                    <div class="relative">
+                        <!-- Double-Layered Timeline Border -->
+                        <svg class="absolute top-0 h-full w-16 text-gray-500" viewBox="20 0 15 400" role="presentation">
+                            <line x1="12" y1="20" x2="12" y2="380" stroke="currentColor" stroke-width="1.5" />
+                            <line x1="20" y1="20" x2="20" y2="380" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M16 30 L22 40 L16 50 L10 40 Z" fill="none" stroke="currentColor"
+                                stroke-width="1.5" />
+                            <path d="M16 230 L22 240 L16 250 L10 240 Z" fill="none" stroke="currentColor"
+                                stroke-width="1.5" />
+                            <path d="M 12,20 Q 12,10 16,10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M 20,20 Q 20,10 16,10" fill="none" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M 12,380 Q 12,390 16,390" fill="none" stroke="currentColor" stroke-width="1.5" />
+                            <path d="M 20,380 Q 20,390 16,390" fill="none" stroke="currentColor" stroke-width="1.5" />
+                        </svg>
+
+                        <!-- Work History Content -->
+                        <div class="pl-10">
+                            <!-- Entry 1 -->
+                            <article aria-labelledby="work-entry-1">
+                                <h3 id="work-entry-1" class="mb-3 pt-8">2016-2022</h3>
+                                <div class="rounded-sm p-5 bg-black">
+                                    <h2
+                                        class="font-bold text-2xl text-transparent bg-clip-text bg-gradient">
+                                        UI/UX Designer</h2>
+                                    <p class="text-gray-400 font-normal mb-4">Website Design</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut commodi earum
+                                        eligendi ipsum, laborum maiores mollitia, optio quam quis rerum totam voluptas.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <!-- Entry 2 -->
+                            <article aria-labelledby="work-entry-2">
+                                <h3 id="work-entry-2" class="mt-10 mb-3">2014-2016</h3>
+                                <div class="rounded-sm p-5 bg-black">
+                                    <h2
+                                        class="font-bold text-2xl text-transparent bg-clip-text bg-gradient">
+                                        Junior Web Designer</h2>
+                                    <p class="text-gray-400 font-normal mb-4">Product Designer</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut commodi earum
+                                        eligendi ipsum, laborum maiores mollitia, optio quam quis rerum totam voluptas.
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Work History Section End Here -->
+
+
+
+
+
+            <!-- Skill Section Start Here -->
+            <section aria-labelledby="skills-heading" class="w-full max-w-l p-4 rounded-md shadow-md mt-20">
+                <h2 id="skills-heading" class="text-white text-3xl font-bold mb-4">Skills</h2>
+
+                <!-- Skill Bars -->
+                <div class="space-y-5">
+
+                    <!-- UI/UX Design -->
+                    <div aria-labelledby="skill-uiux">
+                        <div class="flex justify-between mb-1">
+                            <span id="skill-uiux" class="text-white">UI/UX Design</span>
+                            <span class="text-[#F89222]">95%</span>
+                        </div>
+                        <div class="w-full bg-[#F5BD4D]/30 rounded-full h-2.5" aria-hidden="true">
+                            <div class="bg-gradient h-2.5 rounded-full"
+                                style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Photography -->
+                    <div aria-labelledby="skill-photography">
+                        <div class="flex justify-between mb-1">
+                            <span id="skill-photography" class="text-white">Photography</span>
+                            <span class="text-[#F89222]">90%</span>
+                        </div>
+                        <div class="w-full bg-[#F5BD4D]/30 rounded-full h-2.5" aria-hidden="true">
+                            <div class="bg-gradient h-2.5 rounded-full"
+                                style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Creativity -->
+                    <div aria-labelledby="skill-creativity">
+                        <div class="flex justify-between mb-1">
+                            <span id="skill-creativity" class="text-white">Creativity</span>
+                            <span class="text-[#F89222]">80%</span>
+                        </div>
+                        <div class="w-full bg-[#F5BD4D]/30 rounded-full h-2.5" aria-hidden="true">
+                            <div class="bg-gradient h-2.5 rounded-full"
+                                style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Team Work -->
+                    <div aria-labelledby="skill-teamwork">
+                        <div class="flex justify-between mb-1">
+                            <span id="skill-teamwork" class="text-white">Team Work</span>
+                            <span class="text-[#F89222]">95%</span>
+                        </div>
+                        <div class="w-full bg-[#F5BD4D]/30 rounded-full h-2.5" aria-hidden="true">
+                            <div class="bg-gradient h-2.5 rounded-full"
+                                style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Web Design -->
+                    <div aria-labelledby="skill-webdesign">
+                        <div class="flex justify-between mb-1">
+                            <span id="skill-webdesign" class="text-white">Web Design</span>
+                            <span class="text-[#F89222]">95%</span>
+                        </div>
+                        <div class="w-full bg-[#F5BD4D]/30 rounded-full h-2.5" aria-hidden="true">
+                            <div class="bg-gradient h-2.5 rounded-full"
+                                style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- Skill Section End Here -->
+
+
+            <!--! Portfolio Section Start Here    -->
+            <section id="user">
+                <h1 class="text-3xl font-bold mt-20 mb-10 ">Portfolio</h1>
+                <nav class="  xl:flex space-y-3 sm:space-y-0 justify-around bg-black p-5">
+                    <ul>
+                        <li><a href="#"
+                                class="relative group text-white px-4 py-2 cursor-pointer transition-all duration-300 hover:text-[#F89222] pb-3"
+                                id="all" onclick="setActive('all')">
+                                All
+                                <span
+                                    class="absolute bottom-0 left-0 w-full bg-[#F89222] scale-x-0 group-hover:scale-x-100 h-[3px] transition-all duration-300 origin-bottom"></span></a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"
+                                class="relative group text-white px-4 py-2 cursor-pointer transition-all duration-300 hover:text-[#F89222] pb-3"
+                                id="graphic-design" onclick="setActive('graphic-design')">
+                                Graphic Design
+                                <span
+                                    class="absolute bottom-0 left-0 w-full bg-[#F89222] scale-x-0 group-hover:scale-x-100 h-[3px] transition-all duration-300 origin-bottom"></span></a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"
+                                class="relative group text-white px-4 py-2 cursor-pointer transition-all duration-300 hover:text-[#F89222] pb-3"
+                                id="mobile-app" onclick="setActive('mobile-app')">
+                                Mobile App
+                                <span
+                                    class="absolute bottom-0 left-0 w-full bg-[#F89222] scale-x-0 group-hover:scale-x-100 h-[3px] transition-all duration-300 origin-bottom"></span></a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"
+                                class="relative group text-white px-4 py-2 cursor-pointer transition-all duration-300 hover:text-[#F89222] pb-3"
+                                id="photography" onclick="setActive('photography')">
+                                Photography
+                                <span
+                                    class="absolute bottom-0 left-0 w-full bg-[#F89222] scale-x-0 group-hover:scale-x-100 h-[3px] transition-all duration-300 origin-bottom"></span></a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"
+                                class="relative group text-white px-4 py-2 cursor-pointer transition-all duration-300 hover:text-[#F89222] pb-3"
+                                id="ui-ux-design" onclick="setActive('ui-ux-design')">
+                                UI/UX Design
+                                <span
+                                    class="absolute bottom-0 left-0 w-full bg-[#F89222] scale-x-0 group-hover:scale-x-100 h-[3px] transition-all duration-300 origin-bottom"></span></a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <script>
+                    // Set the active class for the clicked element
+                    function setActive(clickedId) {
+                        const links = document.querySelectorAll('nav a');
+                        links.forEach(link => {
+                            link.classList.remove('text-[#F89222]', 'pb-3');
+                        });
+                        const clickedLink = document.getElementById(clickedId);
+                        clickedLink.classList.add('text-[#F89222]', 'pb-3');
+                    }
+
+                    // Set the default active item (e.g., 'All')
+                    document.addEventListener('DOMContentLoaded', function () {
+                        setActive('all');
+                    });
+                </script>
+
+                <!-- Portfolio -->
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mt-5 ">
+                    <!-- ! left side content  -->
+                    <div class="space-y-6">
+                        <!-- Card 1 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="h-[350px] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/R 4.jpeg" alt="Figma Mockup: Editable PSD Design" loading="lazy">
+                            <div
+                                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <h2 class="text-xl font-bold">Figma Mockup</h2>
+                                <p>Figma mockup PSD editable</p>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="h-[590px] object-cover w-full transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/one.jpeg" alt="Second Image: Creative Design Showcase" loading="lazy">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-white opacity-0 translate-y-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                    <h2 class="text-xl font-bold">Figma Mockup</h2>
+                                    <p>Figma mockup PSD editable</p>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="w-full h-[300px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/two.jpeg" alt="Third Image: Concept Art" loading="lazy">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-white opacity-0 translate-y-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                    <h2 class="text-xl font-bold">Figma Mockup</h2>
+                                    <p>Figma mockup PSD editable</p>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="w-full h-[300px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/zero.png" alt="Fourth Image: Minimalist Design" loading="lazy">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-white opacity-0 translate-y-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                    <h2 class="text-xl font-bold">Website design</h2>
+                                    <p>Fitness Studio Website</p>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--  ! Right side content  -->
+
+                    <div class="space-y-6">
+                        <!-- Card 1 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="w-full h-[300px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/R One.png" alt="Image One" loading="lazy">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-white opacity-0 translate-y-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                    <h2 class="text-xl font-bold">Figma Mockup</h2>
+                                    <p>Figma mockup PSD editable</p>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="w-full h-[300px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/R2.png" alt="Image Two" loading="lazy">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-white opacity-0 translate-y-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                    <h2 class="text-xl font-bold">Figma Mockup</h2>
+                                    <p>Figma mockup PSD editable</p>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="w-full h-[300px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/R 3.jpeg" alt="Image Three" loading="lazy">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-white opacity-0 translate-y-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                    <h2 class="text-xl font-bold">Figma Mockup</h2>
+                                    <p>Figma mockup PSD editable</p>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="w-full h-[315px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/R 4.jpeg" alt="Image Four" loading="lazy">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-white opacity-0 translate-y-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                    <h2 class="text-xl font-bold">Photography</h2>
+                                    <p>Photography Project</p>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="relative bg-black/20 group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                            <img class="w-full h-[300px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 group-hover:opacity-10"
+                                src="./assets/zero.png" alt="Image Five" loading="lazy">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center text-white opacity-0 translate-y-5 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                <div
+                                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+                                    <h2 class="text-xl font-bold">Figma Mockup</h2>
+                                    <p>Figma mockup PSD editable</p>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="absolute top-5 right-5 bg-black p-2 rounded-full text-white opacity-0 scale-75 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:scale-100">
+                                <i class="ri-links-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </section>
+            <!--! Portfolio Section End Here    -->
+
+            <!-- Blog Section Start -->
+            <section>
+                <h1 id="blog" class="text-3xl font-bold mt-32 mb-10">Blog</h1>
+
+                <div class="xl:flex gap-6">
+                    <!-- Left Column -->
+                    <div class="space-y-6">
+                        <!-- Blog Post 1 -->
+                        <article class="bg-black overflow-hidden rounded-lg shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img class="h-[400px] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-95"
+                                    src="./assets/2L!.png" alt="Graphic Design Post 1">
+                            </div>
+                            <div class="p-6">
+                                <p class="font-normal text-white/60 mb-2">Graphic Design | 28 Apr 2022</p>
+                                <h2
+                                    class="font-medium text-white/95 text-xl mb-4 group-hover:text-[#F89222] transition-colors">
+                                    The Role of Color Theory in Graphic Design
+                                </h2>
+                                <p class="text-white/70">
+                                    Color theory is essential in graphic design, helping designers choose colors that
+                                    evoke emotions and create harmony in a composition. By understanding the psychology
+                                    of colors, designers can influence mood and enhance the visual appeal of their work.
+                                </p>
+                                <footer class="mt-5 text-center">
+                                    <p class="text-lg text-white/90 flex items-center justify-center gap-4">
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                        Posted By Daryl Smith
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                    </p>
+                                </footer>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article class="bg-black overflow-hidden rounded-lg shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img class="h-[320px] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-95"
+                                    src="./assets/2L2.png" alt="Graphic Design Post 2">
+                            </div>
+                            <div class="p-6">
+                                <p class="font-normal text-white/60 mb-2">Graphic Design | 28 Apr 2022</p>
+                                <h2
+                                    class="font-medium text-white/95 text-xl mb-4 group-hover:text-[#F89222] transition-colors">
+                                    Typography: The Art of Communication Through Fonts
+                                </h2>
+                                <p class="text-white/70">
+                                    Typography is crucial for conveying messages clearly and aesthetically in design.
+                                    Choosing the right font style, weight, and size can significantly impact how a
+                                    message is received by the audience and enhance the design's overall impact.
+                                </p>
+                                <footer class="mt-5 text-center">
+                                    <p class="text-lg text-white/90 flex items-center justify-center gap-4">
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                        Posted By Daryl Smith
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                    </p>
+                                </footer>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 3 -->
+                        <article class="bg-black overflow-hidden rounded-lg shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img class="h-[320px] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-95"
+                                    src="./assets/2l3.png" alt="Graphic Design Post 3">
+                            </div>
+                            <div class="p-6">
+                                <p class="font-normal text-white/60 mb-2">Graphic Design | 28 Apr 2022</p>
+                                <h2
+                                    class="font-medium text-white/95 text-xl mb-4 group-hover:text-[#F89222] transition-colors">
+                                    The Power of Minimalism in Modern Design
+                                </h2>
+                                <p class="text-white/70">
+                                    Minimalism in design is about stripping away unnecessary elements, focusing only on
+                                    what is essential. It emphasizes clean lines, simple shapes, and ample white space
+                                    to create visually striking and effective designs that are easy to understand.
+                                </p>
+                                <footer class="mt-5 text-center">
+                                    <p class="text-lg text-white/90 flex items-center justify-center gap-4">
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                        Posted By Daryl Smith
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                    </p>
+                                </footer>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="space-y-6">
+                        <!-- Blog Post 4 -->
+                        <article class="bg-black overflow-hidden rounded-lg shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img class="h-[320px] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-95"
+                                    src="./assets/2R1.png" alt="Graphic Design Post 4">
+                            </div>
+                            <div class="p-6">
+                                <p class="font-normal text-white/60 mb-2">Graphic Design | 28 Apr 2022</p>
+                                <h2
+                                    class="font-medium text-white/95 text-xl mb-4 group-hover:text-[#F89222] transition-colors">
+                                    Exploring the Impact of Branding on Consumer Behavior
+                                </h2>
+                                <p class="text-white/70">
+                                    Effective branding can shape consumer perception, creating trust and emotional
+                                    connections with the audience. A strong brand identity influences decision-making
+                                    and can increase customer loyalty, making it vital for businesses in competitive
+                                    markets.
+                                </p>
+                                <footer class="mt-5 text-center">
+                                    <p class="text-lg text-white/90 flex items-center justify-center gap-4">
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                        Posted By Daryl Smith
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                    </p>
+                                </footer>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 5 -->
+                        <article class="bg-black overflow-hidden rounded-lg shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img class="h-[320px] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-95"
+                                    src="./assets/2r2.png" alt="Graphic Design Post 5">
+                            </div>
+                            <div class="p-6">
+                                <p class="font-normal text-white/60 mb-2">Graphic Design | 28 Apr 2022</p>
+                                <h2
+                                    class="font-medium text-white/95 text-xl mb-4 group-hover:text-[#F89222] transition-colors">
+                                    The Evolution of Web Design: From Static to Interactive
+                                </h2>
+                                <p class="text-white/70">
+                                    Web design has progressed from basic static pages to highly interactive websites.
+                                    Advances in web technologies now allow designers to create responsive, interactive,
+                                    and immersive experiences that adapt to different screen sizes and enhance user
+                                    engagement.
+                                </p>
+                                <footer class="mt-5 text-center">
+                                    <p class="text-lg text-white/90 flex items-center justify-center gap-4">
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                        Posted By Daryl Smith
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                    </p>
+                                </footer>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 6 -->
+                        <article class="bg-black overflow-hidden rounded-lg shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img class="h-[320px] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-95"
+                                    src="./assets/2r3.png" alt="Graphic Design Post 6">
+                            </div>
+                            <div class="p-6">
+                                <p class="font-normal text-white/60 mb-2">Graphic Design | 28 Apr 2022</p>
+                                <h2
+                                    class="font-medium text-white/95 text-xl mb-4 group-hover:text-[#F89222] transition-colors">
+                                    The Significance of User-Centered Design in Digital Products
+                                </h2>
+                                <p class="text-white/70">
+                                    User-centered design prioritizes the needs and preferences of the users. It involves
+                                    iterative testing
+                                </p>
+                                <footer class="mt-5 text-center">
+                                    <p class="text-lg text-white/90 flex items-center justify-center gap-4">
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                        Posted By Daryl Smith
+                                        <span class="block h-[1px] w-8 bg-[#F89222]"></span>
+                                    </p>
+                                </footer>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <!-- Blog Section End -->
+
+
+
+
+            <!--! Pricing Section Start Here    -->
+            <section id="shop" class="mt-20 ">
+                <h1 class="font-bold text-3xl mb-10 ">Pricing</h1>
+
+
+                <div class=" ">
+
+
+                    <div class="sm:flex gap-6 md:flex-col xl:flex-row items-center justify-center  ">
+
+                        <div class="bg-[#0f0f0f] p-6 rounded-lg w-72 text-white mx-auto ">
+                            <!-- Plan Title y -->
+                            <div
+                                class="bg-[#8b4513]/60 text-white font-semibold py-1 px-3 rounded-r-full inline-block mb-4 -ml-[24px]">
+                                Intro
+                            </div>
+
+                            <!-- Price -->
+                            <div class="text-5xl font-bold mb-2">
+                                $29 <span class="text-lg font-normal">/ month</span>
+                            </div>
+
+                            <!-- Features List with Different Background Color -->
+                            <div class="bg-[#1a1a1a] p-4 rounded-lg mt-4">
+                                <ul class="space-y-2">
+                                    <li class="text-white">Interface Design</li>
+                                    <li class="text-white">Front-end Code</li>
+                                    <li class="text-white">Back-end Development</li>
+                                    <li class="text-gray-500 line-through">Search Engine Optimization</li>
+                                    <li class="text-gray-500 line-through ">Awesome Support</li>
+                                    <li class="text-gray-500 line-through ">Responsive site</li>
+                                    <li class="text-gray-500 line-through ">Easy in use</li>
+                                    <li class="text-gray-500 line-through ">Useful site</li>
+                                    <li class="text-gray-500 line-through ">Speedy web</li>
+                                </ul>
+                            </div>
+
+                            <!-- Get Started Button Aligned Left -->
+                            <button
+                                class="mt-6 hover:bg-gradient border text-[#f59e0b] hover:text-white border-[#f59e0b] font-semibold py-2 px-4 rounded-lg">
+                                Get Started
+                            </button>
+                        </div>
+
+
+
+
+
+                        <div class="bg-[#0f0f0f] p-6 rounded-lg w-72 text-white mx-auto mt-8 sm:mt-0 ">
+                            <!-- Plan Title -->
+                            <div
+                                class="bg-[#8b4513]/60 text-white font-semibold py-1 px-3 rounded-r-full inline-block mb-4 -ml-[24px]">
+                                Intro
+                            </div>
+
+                            <!-- Price -->
+                            <div class="text-5xl font-bold mb-2">
+                                $49 <span class="text-lg font-normal">/ month</span>
+                            </div>
+
+                            <!-- Features List with Different Background Color -->
+                            <div class="bg-[#1a1a1a] p-4 rounded-lg mt-4">
+                                <ul class="space-y-2">
+                                    <li class="text-white">Interface Design</li>
+                                    <li class="text-white">Front-end Code</li>
+                                    <li class="text-white">Back-end Development</li>
+                                    <li class="text-white">Search Engine Optimization</li>
+                                    <li class="text-gray-500 line-through ">Awesome Support</li>
+                                    <li class="text-white">Responsive site</li>
+                                    <li class="text-gray-500 line-through ">Easy in use</li>
+                                    <li class="text-gray-500 line-through ">Useful site</li>
+                                    <li class="text-gray-500 line-through ">Speedy web</li>
+                                </ul>
+                            </div>
+
+                            <!-- Get Started Button Aligned Left -->
+                            <button
+                                class="mt-6 hover:bg-gradient border text-[#f59e0b] hover:text-white border-[#f59e0b] font-semibold py-2 px-4 rounded-lg">
+                                Get Started
+                            </button>
+                        </div>
+
+
+                    </div>
+
+
+
+
+                    <div class="sm:flex gap-6 md:flex-col xl:flex-row justify-center items-center mt-8  ">
+                        <div class="bg-[#0f0f0f] p-6 rounded-lg w-72 text-white mx-auto  ">
+                            <!-- Plan Title -->
+                            <div
+                                class="bg-[#8b4513]/60 text-white font-semibold py-1 px-3 rounded-r-full inline-block mb-4 -ml-[24px]">
+                                Intro
+                            </div>
+
+                            <!-- Price -->
+                            <div class="text-5xl font-bold mb-2">
+                                $99 <span class="text-lg font-normal">/ month</span>
+                            </div>
+
+                            <!-- Features List with Different Background Color -->
+                            <div class="bg-[#1a1a1a] p-4 rounded-lg mt-4">
+                                <ul class="space-y-2">
+                                    <li class="text-white">Interface Design</li>
+                                    <li class="text-white">Front-end Code</li>
+                                    <li class="text-white">Back-end Development</li>
+                                    <li class="text-white">Search Engine Optimization</li>
+                                    <li class="text-white">Awesome Support</li>
+                                    <li class="text-white">Responsive site</li>
+                                    <li class="text-gray-500">Easy in use</li>
+                                    <li class="text-gray-500">Useful site</li>
+                                    <li class="text-gray-500">Speedy web</li>
+                                </ul>
+                            </div>
+
+                            <!-- Get Started Button Aligned Left -->
+                            <button
+                                class="mt-6 hover:bg-gradient border text-[#f59e0b] hover:text-white border-[#f59e0b] font-semibold py-2 px-4 rounded-lg">
+                                Get Started
+                            </button>
+                        </div>
+
+
+                        <div class="bg-[#0f0f0f] p-6 rounded-lg w-72 text-white mx-auto mt-8 sm:mt-0  ">
+                            <!-- Plan Title -->
+                            <div
+                                class="bg-[#8b4513]/60 text-white font-semibold py-1 px-3 rounded-r-full inline-block mb-4 -ml-[24px]">
+                                Intro
+                            </div>
+
+                            <!-- Price -->
+                            <div class="text-5xl font-bold mb-2">
+                                $199 <span class="text-lg font-normal">/ month</span>
+                            </div>
+
+                            <!-- Features List with Different Background Color -->
+                            <div class="bg-[#1a1a1a] p-4 rounded-lg mt-4">
+                                <ul class="space-y-2">
+                                    <li class="text-white">Interface Design</li>
+                                    <li class="text-white">Front-end Code</li>
+                                    <li class="text-white">Back-end Development</li>
+                                    <li class="text-white">Search Engine Optimization</li>
+                                    <li class="text-white">Awesome Support</li>
+                                    <li class="text-white">Responsive site</li>
+                                    <li class="text-white">Easy in use</li>
+                                    <li class="text-white">Useful site</li>
+                                    <li class="text-white">Speedy web</li>
+                                </ul>
+                            </div>
+
+                            <!-- Get Started Button Aligned Left -->
+                            <button
+                                class="mt-6 hover:bg-gradient border text-[#f59e0b] hover:text-white border-[#f59e0b] font-semibold py-2 px-4 rounded-lg">
+                                Get Started
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+            <!--! Pricing Section Ends Here    -->
+
+            <!--! Contact Section Start Here -->
+            <section id="contact" class="p-8 rounded-lg mt-20 text-white">
+                <!-- Title -->
+                <h2 class="text-3xl font-semibold mb-6">Contact</h2>
+
+                <!-- Contact Form -->
+                <form class="space-y-4">
+                    <!-- First and Last Name (Stack on tablet and above) -->
+                    <div class="flex flex-col lg:flex-row gap-4">
+                        <div class="w-full lg:w-1/2">
+                            <label for="first-name" class="block text-sm font-medium mb-1">First Name*</label>
+                            <input type="text" id="first-name"
+                                class="w-full bg-black border border-[#d97706]/50 text-white py-2 px-3 rounded focus:outline-none focus:ring-2 focus:ring-[#f59e0b]">
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <label for="last-name" class="block text-sm font-medium mb-1">Last Name*</label>
+                            <input type="text" id="last-name"
+                                class="w-full bg-black border border-[#d97706]/50 text-white py-2 px-3 rounded focus:outline-none focus:ring-2 focus:ring-[#f59e0b]">
+                        </div>
+                    </div>
+
+                    <!-- Email and Phone) -->
+                    <div class="flex flex-col lg:flex-row gap-4">
+                        <div class="w-full lg:w-1/2">
+                            <label for="email" class="block text-sm font-medium mb-1">Email*</label>
+                            <input type="email" id="email"
+                                class="w-full bg-black border border-[#d97706]/50 text-white py-2 px-3 rounded focus:outline-none focus:ring-2 focus:ring-[#f59e0b]">
+                        </div>
+                        <div class="w-full lg:w-1/2">
+                            <label for="phone" class="block text-sm font-medium mb-1">Phone*</label>
+                            <input type="text" id="phone"
+                                class="w-full bg-black border border-[#d97706]/50 text-white py-2 px-3 rounded focus:outline-none focus:ring-2 focus:ring-[#f59e0b]">
+                        </div>
+                    </div>
+
+                    <!-- Message (Stacks on all screen sizes) -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-1">Message*</label>
+                        <textarea id="message" rows="4"
+                            class="w-full bg-black border border-[#d97706]/50 text-white py-2 px-3 rounded focus:outline-none focus:ring-2 focus:ring-gradient"></textarea>
+                    </div>
+
+                    <!-- Send Message Button -->
+                    <button type="submit"
+                        class="w-full bg-gradient text-white font-semibold py-2 rounded-lg ">
+                        Send message
+                    </button>
+                </form>
+            </section>
+            <!--! Contact Section Ends Here -->
+
+
+
+        </section>
+
+        <!-- right side -->
+        <div class="col-span-2 hidden lg:flex   relative ">
+
+
+
+            <div class=" absolute   bg-[#121212] w-[550px]  rotate-90  mt-56 -ml-28 h-24 flex items-center  ">
+                <p class=" p-2   ">© design by themefisher developed by gethugothemes</p>
+
+
+                <span
+                    class=" ml-10 -rotate-90 h-10 w-10 flex items-center justify-center bg-[#343434] rounded-full ">Fr</span>
+                <span
+                    class=" ml-4 -rotate-90 h-10 w-10 flex items-center justify-center bg-[#F6AB3B] rounded-full ">En</span>
+            </div>
+
+        </div>
+
+        </div>
+
+
+    </main>
+
+    <!-- Hero End  -->
+
+
+
+
+
+</body>
+
+</html>
