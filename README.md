@@ -1,4 +1,4 @@
-# Project Name
+# Portfolio Project
 
 This is a web development project focused on UI/UX and web design, optimized for speed, accessibility, and responsive design across multiple browsers.
 
